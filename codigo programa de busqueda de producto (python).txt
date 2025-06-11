@@ -7,7 +7,6 @@ class SistemaFacturacionSupermercado:
         self.root.title("Sistema de Busqueda De Productos")
         self.root.geometry("900x600")
 
-        # Productos del supermercado
         self.productos = {
            "Leche Colanta 1L": 2500,
             "Pan Bimbo Integral": 1500,
@@ -57,14 +56,11 @@ class SistemaFacturacionSupermercado:
         self.carrito = {}
         self.total = 0.0
 
-        # Estilos
         self.color_fondo = "#f2f2f2"
         self.color_boton = "#4CAF50"
         self.color_boton_hover = "#45a049"
         self.color_texto = "#333"
-        self.color_marco = "#ddd"
 
-        # Interfaz gráfica
         self.frame_buscar = Frame(root, bg=self.color_fondo)
         self.frame_buscar.pack(pady=20)
 
@@ -102,7 +98,6 @@ class SistemaFacturacionSupermercado:
         self.btn_finalizar = Button(self.frame_total, text="Finalizar Compra", command=self.finalizar_compra, bg=self.color_boton, fg="white", activebackground=self.color_boton_hover, font=("Arial", 14))
         self.btn_finalizar.pack(side=RIGHT, padx=10)
 
-        # Carrito de compras
         self.frame_carrito = Frame(root, bg=self.color_marco)
         self.frame_carrito.pack(pady=20, padx=10, fill=BOTH, expand=True)
 
@@ -118,7 +113,7 @@ class SistemaFacturacionSupermercado:
         self.btn_agregar_nuevo = Button(self.frame_carrito, text="Agregar Nuevo Producto", command=self.agregar_nuevo_producto, bg=self.color_boton, fg="white", activebackground=self.color_boton_hover, font=("Arial", 14))
         self.btn_agregar_nuevo.pack(pady=10)
 
-        # Llenar la lista de productos
+   
         self.actualizar_lista_productos()
 
     def actualizar_lista_productos(self):
